@@ -1553,6 +1553,32 @@
         });
       </script>
     </div>
+    <style>
+      @media screen and (max-width: 767px) {
+        .remodal.remodal--global {
+          max-width: 90% !important;
+          margin: 5% auto !important;
+          border-radius: 16px !important;
+          height: auto !important;
+          max-height: 90vh !important;
+          overflow-y: auto !important;
+        }
+        .modal__content {
+          height: auto !important;
+          padding: 24px !important;
+        }
+        .modal__img {
+          height: 180px !important;
+          object-fit: cover !important;
+        }
+        .modal__close {
+          top: 15px !important;
+          right: 15px !important;
+          background-color: rgba(255, 255, 255, 0.8);
+          border-radius: 50%;
+        }
+      }
+    </style>
     <div data-remodal-id="form" class="remodal remodal--global">
       <div data-remodal-action="close" class="modal__close"></div><img
         src="./63734ddc258336c709b2a740/63777bceef68a6712183e2a1_modal-form.jpg" loading="eager"
