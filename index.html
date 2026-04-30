@@ -62,8 +62,8 @@
       right: -1rem;
       width: 7.5rem;
       height: 4rem;
-      background-color: #0d0d0d;
-      border: 1px solid #333;
+      background-color: transparent;
+      border: 1px solid transparent;
       border-radius: 0.5rem;
       display: flex;
       align-items: center;
@@ -71,16 +71,27 @@
       padding: 0.75rem;
       z-index: 10;
       overflow: hidden;
-      opacity: 0;
+      transition: background-color 0s 0s, border-color 0s 0s;
+    }
+
+    .img-logo-wrapper {
+      position: relative;
+      display: block;
+      width: fit-content;
+      margin: 0 auto;
+      /* Fix 3D glitching during swiper scroll */
+      transform: translateZ(0);
+      z-index: 2;
     }
 
     .client-logo-card::after {
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      /* Expand by 1px to cover the border */
+      top: -1px;
+      left: -1px;
+      width: calc(100% + 2px);
+      height: calc(100% + 2px);
       background-color: #1a2bc2;
       transform: translateX(-101%);
       z-index: 20;
@@ -95,7 +106,9 @@
 
     .swiper-slide-active .client-logo-card,
     .client-logo-card.active {
-      opacity: 1;
+      background-color: #0d0d0d;
+      border-color: #333;
+      transition: background-color 0s 0.75s, border-color 0s 0.75s;
     }
 
     .swiper-slide-active .client-logo-card::after,
@@ -1198,7 +1211,7 @@
                     <div data-swiper-gallery="anim" class="gallery__slide-content active">
                       <div data-swiper-gallery="anim" class="gallery__slide-title active">Colline de France</div>
                       <div class="img-logo-wrapper"
-                        style="position: relative; display: block; width: fit-content; margin: 0 auto;">
+                        >
                         <div class="overflow-hidden mod--gallery-slide"><img alt="" width="452"
                             style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);height:0px"
                             loading="lazy" src="./fotos_clientes/01_1x.webp" sizes="(max-width: 767px) 280px, 452px"
@@ -1213,7 +1226,7 @@
                     <div data-swiper-gallery="anim" class="gallery__slide-content active">
                       <div data-swiper-gallery="anim" class="gallery__slide-title active">Salão Super Carros</div>
                       <div class="img-logo-wrapper"
-                        style="position: relative; display: block; width: fit-content; margin: 0 auto;">
+                        >
                         <div class="overflow-hidden mod--gallery-slide"><img alt="" width="452"
                             style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);height:0px"
                             loading="lazy" src="./fotos_clientes/02_1x.webp" sizes="(max-width: 767px) 280px, 452px"
@@ -1227,7 +1240,7 @@
                     <div data-swiper-gallery="anim" class="gallery__slide-content active">
                       <div data-swiper-gallery="anim" class="gallery__slide-title active">A Roda Canela</div>
                       <div class="img-logo-wrapper"
-                        style="position: relative; display: block; width: fit-content; margin: 0 auto;">
+                        >
                         <div class="overflow-hidden mod--gallery-slide"><img alt="" width="452"
                             style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);height:0px"
                             loading="lazy" src="./fotos_clientes/03_1x.webp" sizes="(max-width: 767px) 280px, 452px"
@@ -1241,7 +1254,7 @@
                     <div data-swiper-gallery="anim" class="gallery__slide-content active">
                       <div data-swiper-gallery="anim" class="gallery__slide-title active">Hotel Valle D’Incanto</div>
                       <div class="img-logo-wrapper"
-                        style="position: relative; display: block; width: fit-content; margin: 0 auto;">
+                        >
                         <div class="overflow-hidden mod--gallery-slide"><img alt="" width="452"
                             style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);height:0px"
                             loading="lazy" src="./fotos_clientes/04_1x.webp" sizes="(max-width: 767px) 280px, 452px"
@@ -1255,7 +1268,7 @@
                     <div data-swiper-gallery="anim" class="gallery__slide-content active">
                       <div data-swiper-gallery="anim" class="gallery__slide-title active">Pizzaria Cara de Mau</div>
                       <div class="img-logo-wrapper"
-                        style="position: relative; display: block; width: fit-content; margin: 0 auto;">
+                        >
                         <div class="overflow-hidden mod--gallery-slide"><img alt="" width="452"
                             style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);height:0px"
                             loading="lazy" src="./fotos_clientes/05_1x.webp" sizes="(max-width: 767px) 280px, 452px"
@@ -1270,7 +1283,7 @@
                       <div data-swiper-gallery="anim" class="gallery__slide-title active">Dauper Indústria e Comércio
                       </div>
                       <div class="img-logo-wrapper"
-                        style="position: relative; display: block; width: fit-content; margin: 0 auto;">
+                        >
                         <div class="overflow-hidden mod--gallery-slide"><img alt="" width="452"
                             style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);height:0px"
                             loading="lazy" src="./fotos_clientes/06_1x.webp" sizes="(max-width: 767px) 280px, 452px"
@@ -1284,7 +1297,7 @@
                     <div data-swiper-gallery="anim" class="gallery__slide-content active">
                       <div data-swiper-gallery="anim" class="gallery__slide-title active">Hilton Hotels & Resorts</div>
                       <div class="img-logo-wrapper"
-                        style="position: relative; display: block; width: fit-content; margin: 0 auto;">
+                        >
                         <div class="overflow-hidden mod--gallery-slide"><img alt="" width="452"
                             style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);height:0px"
                             loading="lazy" src="./fotos_clientes/07_1x.webp" sizes="(max-width: 767px) 280px, 452px"
@@ -1298,7 +1311,7 @@
                     <div data-swiper-gallery="anim" class="gallery__slide-content active">
                       <div data-swiper-gallery="anim" class="gallery__slide-title active">Marini Indústria</div>
                       <div class="img-logo-wrapper"
-                        style="position: relative; display: block; width: fit-content; margin: 0 auto;">
+                        >
                         <div class="overflow-hidden mod--gallery-slide"><img alt="" width="452"
                             style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);height:0px"
                             loading="lazy" src="./fotos_clientes/08_1x.webp" sizes="(max-width: 767px) 280px, 452px"
@@ -1327,7 +1340,7 @@
                     <div data-swiper-gallery="anim" class="gallery__slide-content active">
                       <div data-swiper-gallery="anim" class="gallery__slide-title active">Concept Visualization</div>
                       <div class="img-logo-wrapper"
-                        style="position: relative; display: block; width: fit-content; margin: 0 auto;">
+                        >
                         <div class="overflow-hidden mod--gallery-slide"><img alt="" width="452"
                             style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);height:0px"
                             src="./fotos_clientes/01_1x.webp" loading="lazy" sizes="(max-width: 767px) 280px, 452px"
@@ -1342,7 +1355,7 @@
                     <div data-swiper-gallery="anim" class="gallery__slide-content active">
                       <div data-swiper-gallery="anim" class="gallery__slide-title active">Concept Visualization</div>
                       <div class="img-logo-wrapper"
-                        style="position: relative; display: block; width: fit-content; margin: 0 auto;">
+                        >
                         <div class="overflow-hidden mod--gallery-slide"><img alt="" width="452"
                             style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);height:0px"
                             src="./fotos_clientes/02_1x.webp" loading="lazy" sizes="(max-width: 767px) 280px, 452px"
@@ -1356,7 +1369,7 @@
                     <div data-swiper-gallery="anim" class="gallery__slide-content active">
                       <div data-swiper-gallery="anim" class="gallery__slide-title active">Concept Visualization</div>
                       <div class="img-logo-wrapper"
-                        style="position: relative; display: block; width: fit-content; margin: 0 auto;">
+                        >
                         <div class="overflow-hidden mod--gallery-slide"><img alt="" width="452"
                             style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);height:0px"
                             src="./fotos_clientes/03_1x.webp" loading="lazy" sizes="(max-width: 767px) 280px, 452px"
@@ -1370,7 +1383,7 @@
                     <div data-swiper-gallery="anim" class="gallery__slide-content active">
                       <div data-swiper-gallery="anim" class="gallery__slide-title active">Concept Visualization</div>
                       <div class="img-logo-wrapper"
-                        style="position: relative; display: block; width: fit-content; margin: 0 auto;">
+                        >
                         <div class="overflow-hidden mod--gallery-slide"><img alt="" width="452"
                             style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);height:0px"
                             src="./fotos_clientes/04_1x.webp" loading="lazy" sizes="(max-width: 767px) 280px, 452px"
@@ -1384,7 +1397,7 @@
                     <div data-swiper-gallery="anim" class="gallery__slide-content active">
                       <div data-swiper-gallery="anim" class="gallery__slide-title active">Concept Visualization</div>
                       <div class="img-logo-wrapper"
-                        style="position: relative; display: block; width: fit-content; margin: 0 auto;">
+                        >
                         <div class="overflow-hidden mod--gallery-slide"><img alt="" width="452"
                             style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);height:0px"
                             src="./fotos_clientes/05_1x.webp" loading="lazy" sizes="(max-width: 767px) 280px, 452px"
@@ -1398,7 +1411,7 @@
                     <div data-swiper-gallery="anim" class="gallery__slide-content active">
                       <div data-swiper-gallery="anim" class="gallery__slide-title active">Concept Visualization</div>
                       <div class="img-logo-wrapper"
-                        style="position: relative; display: block; width: fit-content; margin: 0 auto;">
+                        >
                         <div class="overflow-hidden mod--gallery-slide"><img alt="" width="452"
                             style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);height:0px"
                             src="./fotos_clientes/06_1x.webp" loading="lazy" sizes="(max-width: 767px) 280px, 452px"
@@ -1412,7 +1425,7 @@
                     <div data-swiper-gallery="anim" class="gallery__slide-content active">
                       <div data-swiper-gallery="anim" class="gallery__slide-title active">Concept Visualization</div>
                       <div class="img-logo-wrapper"
-                        style="position: relative; display: block; width: fit-content; margin: 0 auto;">
+                        >
                         <div class="overflow-hidden mod--gallery-slide"><img alt="" width="452"
                             style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);height:0px"
                             src="./fotos_clientes/07_1x.webp" loading="lazy" sizes="(max-width: 767px) 280px, 452px"
@@ -1426,7 +1439,7 @@
                     <div data-swiper-gallery="anim" class="gallery__slide-content active">
                       <div data-swiper-gallery="anim" class="gallery__slide-title active">Concept Visualization</div>
                       <div class="img-logo-wrapper"
-                        style="position: relative; display: block; width: fit-content; margin: 0 auto;">
+                        >
                         <div class="overflow-hidden mod--gallery-slide"><img alt="" width="452"
                             style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);height:0px"
                             src="./fotos_clientes/08_1x.webp" loading="lazy" sizes="(max-width: 767px) 280px, 452px"
@@ -1455,7 +1468,7 @@
                     <div data-swiper-gallery="anim" class="gallery__slide-content active">
                       <div data-swiper-gallery="anim" class="gallery__slide-title active">Concept Visualization</div>
                       <div class="img-logo-wrapper"
-                        style="position: relative; display: block; width: fit-content; margin: 0 auto;">
+                        >
                         <div class="overflow-hidden mod--gallery-slide"><img alt="" width="452"
                             style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);height:0px"
                             src="./fotos_clientes/01_1x.webp" loading="lazy" sizes="(max-width: 767px) 280px, 452px"
@@ -1470,7 +1483,7 @@
                     <div data-swiper-gallery="anim" class="gallery__slide-content active">
                       <div data-swiper-gallery="anim" class="gallery__slide-title active">Concept Visualization</div>
                       <div class="img-logo-wrapper"
-                        style="position: relative; display: block; width: fit-content; margin: 0 auto;">
+                        >
                         <div class="overflow-hidden mod--gallery-slide"><img alt="" width="452"
                             style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);height:0px"
                             src="./fotos_clientes/02_1x.webp" loading="lazy" sizes="(max-width: 767px) 280px, 452px"
@@ -1484,7 +1497,7 @@
                     <div data-swiper-gallery="anim" class="gallery__slide-content active">
                       <div data-swiper-gallery="anim" class="gallery__slide-title active">Concept Visualization</div>
                       <div class="img-logo-wrapper"
-                        style="position: relative; display: block; width: fit-content; margin: 0 auto;">
+                        >
                         <div class="overflow-hidden mod--gallery-slide"><img alt="" width="452"
                             style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);height:0px"
                             src="./fotos_clientes/03_1x.webp" loading="lazy" sizes="(max-width: 767px) 280px, 452px"
@@ -1498,7 +1511,7 @@
                     <div data-swiper-gallery="anim" class="gallery__slide-content active">
                       <div data-swiper-gallery="anim" class="gallery__slide-title active">Concept Visualization</div>
                       <div class="img-logo-wrapper"
-                        style="position: relative; display: block; width: fit-content; margin: 0 auto;">
+                        >
                         <div class="overflow-hidden mod--gallery-slide"><img alt="" width="452"
                             style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);height:0px"
                             src="./fotos_clientes/04_1x.webp" loading="lazy" sizes="(max-width: 767px) 280px, 452px"
@@ -1512,7 +1525,7 @@
                     <div data-swiper-gallery="anim" class="gallery__slide-content active">
                       <div data-swiper-gallery="anim" class="gallery__slide-title active">Concept Visualization</div>
                       <div class="img-logo-wrapper"
-                        style="position: relative; display: block; width: fit-content; margin: 0 auto;">
+                        >
                         <div class="overflow-hidden mod--gallery-slide"><img alt="" width="452"
                             style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);height:0px"
                             src="./fotos_clientes/05_1x.webp" loading="lazy" sizes="(max-width: 767px) 280px, 452px"
@@ -1526,7 +1539,7 @@
                     <div data-swiper-gallery="anim" class="gallery__slide-content active">
                       <div data-swiper-gallery="anim" class="gallery__slide-title active">Concept Visualization</div>
                       <div class="img-logo-wrapper"
-                        style="position: relative; display: block; width: fit-content; margin: 0 auto;">
+                        >
                         <div class="overflow-hidden mod--gallery-slide"><img alt="" width="452"
                             style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);height:0px"
                             src="./fotos_clientes/06_1x.webp" loading="lazy" sizes="(max-width: 767px) 280px, 452px"
@@ -1540,7 +1553,7 @@
                     <div data-swiper-gallery="anim" class="gallery__slide-content active">
                       <div data-swiper-gallery="anim" class="gallery__slide-title active">Concept Visualization</div>
                       <div class="img-logo-wrapper"
-                        style="position: relative; display: block; width: fit-content; margin: 0 auto;">
+                        >
                         <div class="overflow-hidden mod--gallery-slide"><img alt="" width="452"
                             style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);height:0px"
                             src="./fotos_clientes/07_1x.webp" loading="lazy" sizes="(max-width: 767px) 280px, 452px"
@@ -1554,7 +1567,7 @@
                     <div data-swiper-gallery="anim" class="gallery__slide-content active">
                       <div data-swiper-gallery="anim" class="gallery__slide-title active">Concept Visualization</div>
                       <div class="img-logo-wrapper"
-                        style="position: relative; display: block; width: fit-content; margin: 0 auto;">
+                        >
                         <div class="overflow-hidden mod--gallery-slide"><img alt="" width="452"
                             style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.4, 1.4, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);height:0px"
                             src="./fotos_clientes/08_1x.webp" loading="lazy" sizes="(max-width: 767px) 280px, 452px"
